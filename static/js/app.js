@@ -5,15 +5,11 @@ d3.json(dataUrl).then(function(data){
     console.log(`dataUrl: ${dataUrl}`,data);
 });
 
-// // filter data for selection
-// function filterSelectionData(sample){
-//     d3.json(dataUrl).then(data => {
-//         let filteredData = 
-//     })
-// };
-
 // build the sample demographic info
 function sampleDemographicInfo(sampleID){
+    // transform the data from a string to an integer
+    sampleID = parseInt(sampleID);
+
     // select the demographic info panel
     let demoInfo = d3.select("#sample-metadata");
 
@@ -24,7 +20,7 @@ function sampleDemographicInfo(sampleID){
     d3.json(dataUrl).then(data => {
         // get the metadata part of data
         let metadata = data.metadata;
-        console.log("metadata",metadata);
+        // console.log("metadata",metadata);
 
         // filters the metadata based on the sampleID requested
         // returns the index and then returns the info
@@ -63,14 +59,20 @@ function init() {
         }); //end of filling dropdown with the test subject IDs
 
         // use the first sample to create the landing page info
-        const initialSample = parseInt(sampleName[0]);
-        console.log("first sample:",initialSample);
+        const initialSample = sampleName[0];
+        // console.log("first sample:",initialSample);
 
         // call functions to build sample demographic info & sample charts
         sampleDemographicInfo(initialSample);
         sampleCharts(initialSample);
     }); //end d3.json() promise
-};
+};  //end initialization function
+
+// handle when the selected subjectID is changed in the dropdown
+function optionChanged(changedSample){
+    sampleDemographicInfo(changedSample);
+    sampleCharts(changedSample);
+};  //end optionChanged function
 
 // call initialization
 init();
