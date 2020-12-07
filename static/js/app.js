@@ -1,11 +1,11 @@
 const dataUrl = "/data/samples.json";
 
-// read in the samples.json data
+// -----------------------------------------------------------------read in the samples.json data-----------------------------------------------------------------
 d3.json(dataUrl).then(function(data){
     console.log(`dataUrl: ${dataUrl}`,data);
 });
 
-// build the sample demographic info
+// -----------------------------------------------------------------build the sample demographic info-----------------------------------------------------------------
 function sampleDemographicInfo(subjectID){
     // transform the data from a string to an integer because metadata has it saved as an integer
     subjectID = parseInt(subjectID);
@@ -28,7 +28,7 @@ function sampleDemographicInfo(subjectID){
         // console.log("filterMetadata:",filterMetadata);
 
         // Object.entries() returns array of give objects string-keyed property [key, value]
-        Object.entries(filterMetadata).forEach(([key,value]) =>{
+        Object.entries(filterMetadata).forEach(([key,value]) => {
             // append the items inside the #sample-meta div and add the metadata for each key-value pairing
             demoInfo.append("p")
                 .text(`${key}: ${value}`);
@@ -36,7 +36,7 @@ function sampleDemographicInfo(subjectID){
     }); //end d3.json()
 };  //end sampleDemographicInfo function
 
-// build the sample charts
+// -----------------------------------------------------------------build the sample charts-----------------------------------------------------------------
 function sampleCharts(subjectID){
     // keep the subjectID as string because samples has it saved as a string not integer
     // console.log("chart subjectID",subjectID);
@@ -55,7 +55,7 @@ function sampleCharts(subjectID){
         let sampleValues = filterSamples.sample_values; //already in descending order
 
 
-    // HORIZONTAL BAR CHART
+    // --------------HORIZONTAL BAR CHART--------------
         // top 10 data for the bar chart
         let bar_xData = sampleValues.slice(0,10).reverse();
         let bar_yData = otuIDs.slice(0,10).reverse();
@@ -79,7 +79,7 @@ function sampleCharts(subjectID){
         // plot the bar chart to the div
         Plotly.newPlot("bar",barData,barLayout);
 
-    // GAUGE CHART
+    // --------------GAUGE CHART--------------
         // get the wash frequency
         let metadata = data.metadata;
         let washFreq = metadata[metadata.findIndex(element => element.id === parseInt(subjectID))].wfreq;
@@ -117,7 +117,7 @@ function sampleCharts(subjectID){
         
         Plotly.newPlot("gauge",gaugeData,gaugeLayout);
 
-    // BUBBLE CHART
+    // --------------BUBBLE CHART--------------
         // create the data[{trace}]
         let bubbleData = [{
             mode: "markers",
@@ -142,7 +142,7 @@ function sampleCharts(subjectID){
     }); //end d3.json()
 };  //end sampleCharts function
 
-// initialize the page with the default selection
+// -----------------------------------------------------------------initialize the page with the default selection-----------------------------------------------------------------
 function init() {
     // grab the dropdown menu element reference
     let subjectIDDropdown = d3.select("#selDataset")
@@ -175,5 +175,5 @@ function optionChanged(newSubjectID){
     sampleCharts(newSubjectID);
 };  //end optionChanged function
 
-// call initialization
+// -----------------------------------------------------------------call initialization-----------------------------------------------------------------
 init();
