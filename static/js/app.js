@@ -68,7 +68,11 @@ function sampleCharts(subjectID){
             x: bar_xData,
             y: bar_yData
                 .map(id => `OTU ${id}`),
-            text: bar_textData
+            text: bar_textData,
+            // marker: {
+            //     color: bar_xData,
+            //     colorscale: "Earth" //didn't show up well for the top part, color too light
+            // }
         }];
         // create the layout
         let barLayout = {
@@ -80,7 +84,26 @@ function sampleCharts(subjectID){
         Plotly.newPlot("bar",barData,barLayout);
 
     // BUBBLE CHART
+        // create the data[{trace}]
+        let bubbleData = [{
+            mode: "markers",
+            x: otuIDs,
+            y: sampleValues,
+            marker: {
+                size: sampleValues,
+                color: otuIDs,
+                colorscale: "Earth" //https://plotly.com/javascript/colorscales/
+            },
+            text: otuLabels
+        }];
+        // create the layout
+        let bubbleLayout = {
+            title: "All Operational Taxonomic Units",
+            xaxis: {title: "OTU ID"}
+        };
 
+        // plot the bubble chart to the div
+        Plotly.newPlot("bubble",bubbleData,bubbleLayout);
     }); //end d3.json()
 };  //end sampleCharts function
 
