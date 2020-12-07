@@ -72,7 +72,7 @@ function sampleCharts(subjectID){
         }];
         // create the layout
         let barLayout = {
-            title: "Top 10 Operational Taxonomic Units",
+            title: "<b>Top 10 Operational Taxonomic Units</b>",
             xaxis: {title: "Sample Values"}
         };
 
@@ -132,7 +132,7 @@ function sampleCharts(subjectID){
         }];
         // create the layout
         let bubbleLayout = {
-            title: "All Operational Taxonomic Units",
+            title: "<b>All Operational Taxonomic Units</b>",
             xaxis: {title: "OTU ID"},
         };
 
