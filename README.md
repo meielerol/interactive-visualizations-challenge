@@ -52,3 +52,7 @@ Display how frequently the Test Subject's belly button gets scrubbed.
 Display a bubble chart of all the Test Subject's OTU's.
 
 <p align="center"><img src="https://github.com/meielerol/interactive-visualizations-challenge/blob/main/images/All-OTU.png" alt="OTU Bubble Chart"></p>
+
+## About the Data
+
+Hulcr, J. et al.(2012) A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable. Retrieved from: (http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
