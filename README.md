@@ -4,6 +4,18 @@ Create an interactive dashboard to explore the [Belly Buttom Biodiversity datase
 
 The dataset shows that there is a small set of microbial species that were present in more than 70% of people while the rest were relatively rare.
 
+## Webpage
+
+To run the website:
+- download the files
+- open the html file using a live server (otherwise information may not load correctly)
+
+The HTML page code can be found [here](https://github.com/meielerol/interactive-visualizations-challenge/blob/main/index.html).
+
+The JavaScript page code can be found [here](https://github.com/meielerol/interactive-visualizations-challenge/blob/main/static/js/app.js).
+
+The Data JSON can be found [here](https://github.com/meielerol/interactive-visualizations-challenge/tree/main/data).
+
 ## Dropdown Menu
 
 Allows users to select the Test Subject ID they would like to see the data for.
@@ -40,15 +52,3 @@ Display how frequently the Test Subject's belly button gets scrubbed.
 Display a bubble chart of all the Test Subject's OTU's.
 
 <p align="center"><img src="https://github.com/meielerol/interactive-visualizations-challenge/blob/main/images/All-OTU.png" alt="OTU Bubble Chart"></p>
-
-## Webpage
-
-To run the website:
-- download the files
-- open the html file using a live server (otherwise information may not load correctly)
-
-The HTML page code can be found [here](https://github.com/meielerol/interactive-visualizations-challenge/blob/main/index.html).
-
-The JavaScript page code can be found [here](https://github.com/meielerol/interactive-visualizations-challenge/blob/main/static/js/app.js).
-
-The Data JSON can be found [here](https://github.com/meielerol/interactive-visualizations-challenge/tree/main/data).
