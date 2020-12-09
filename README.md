@@ -10,6 +10,8 @@ To run the website:
 - download the files
 - open the html file using a live server (otherwise information may not load correctly)
 
+or click on this [link](https://meielerol.github.io/interactive-visualizations-challenge/)
+
 The HTML page code can be found [here](https://github.com/meielerol/interactive-visualizations-challenge/blob/main/index.html).
 
 The JavaScript page code can be found [here](https://github.com/meielerol/interactive-visualizations-challenge/blob/main/static/js/app.js).
