@@ -1,4 +1,4 @@
-const dataUrl = "./data/samples.json";
+const dataUrl = "./main/data/samples.json";
 
 // -----------------------------------------------------------------read in the samples.json data-----------------------------------------------------------------
 d3.json(dataUrl).then(function(data){
